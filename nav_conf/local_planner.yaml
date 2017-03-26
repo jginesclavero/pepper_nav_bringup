@@ -30,5 +30,4 @@ oscillation_reset_dist: 0.03
 # The amount of time to forward-simulate trajectories in seconds
 sim_time: 1.2
 holonomic_robot: true
-
 meter_scoring: true
