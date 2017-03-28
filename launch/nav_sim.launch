@@ -7,13 +7,13 @@
     <!--<node name="map_odom_transform" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /odom 10"/>-->
 
     <node name="amcl" pkg="amcl" type="amcl" output="screen">
-        <remap from="/scan" to="/pepper_robot/laser/scan_merged"/>
+        <remap from="/scan" to="/laser/scan_merged"/>
         <param name="odom_model_type" value="omni" />
         <param name="base_frame_id" value="base_footprint" />
     </node>
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
-        <remap from="/scan" to="/pepper_robot/laser/scan_merged"/>
+        <remap from="/scan" to="/laser/scan_merged"/>
 
         <param name="footprint_padding" value="0.05" />
         <param name="controller_frequency" value="6.0" />
