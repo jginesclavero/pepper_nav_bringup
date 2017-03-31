@@ -4,7 +4,6 @@ acc_lim_x: 2.5
 acc_lim_y: 2.5
 acc_limit_trans: 1.0
 
-# Values estimated for Ranger2
 max_vel_theta: 1.5
 min_vel_theta: 0.06
 max_rot_vel: 1.0
@@ -20,7 +19,9 @@ min_trans_vel: 0.1
 
 xy_goal_tolerance: 0.1
 yaw_goal_tolerance: 0.06 # ~3deg
-# If the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so. (false)
+# If the robot ever reaches the goal xy location it
+# will simply rotate in place, even if it ends up outside
+# the goal tolerance while it is doing so. (false)
 latch_xy_goal_tolerance: true
 
 penalize_negative_x: false # for DWA planner only
