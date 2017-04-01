@@ -1,16 +1,21 @@
-acc_lim_th: 0.4
-acc_lim_x: 0.4
-acc_lim_y: 0.4
+acc_lim_th: 5.8
+acc_lim_theta: 5.8
+acc_lim_x: 1.0
+acc_lim_y: 0.0
+acc_limit_trans: 1.0
 
-max_rot_vel: 1.5
-min_rot_vel: 0.4
+max_vel_theta: 1.5
+min_vel_theta: 0.06
+max_rot_vel: 1.5 # for DWA
+min_rot_vel: 0.06 # for DWA
 
+min_in_place_vel_theta: 0.2
 max_vel_x: 0.8
 min_vel_x: 0.05
-max_vel_y: 0.3
+max_vel_y: 0.8
 min_vel_y: 0.05
-max_trans_vel: 0.55 # for DWA
-min_trans_vel: 0.1  # for DWA
+max_trans_vel: 0.8  # for DWA
+min_trans_vel: 0.05 # for DWA
 
 xy_goal_tolerance: 0.10
 yaw_goal_tolerance: 0.06
