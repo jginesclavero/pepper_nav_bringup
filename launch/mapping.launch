@@ -10,8 +10,8 @@
         <param name="xmax" value="10.0" />
         <param name="ymax" value="10.0" />
         <param name="particles" value="300" />
-        <param name="maxRange" value="3.0" />
-        <param name="maxUrange" value="2.9" />
+        <param name="maxRange" value="2.0" />
+        <param name="maxUrange" value="1.8" />
         <param name="delta" value="0.02" />
     </node>
 </launch>
