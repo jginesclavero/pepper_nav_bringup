@@ -1,28 +1,21 @@
-acc_lim_th: 5.8
-acc_lim_theta: 5.8
-acc_lim_x: 1.0
-acc_lim_y: 0.0
-acc_limit_trans: 1.0
+acc_lim_th: 0.4
+acc_lim_x: 0.4
+acc_lim_y: 0.4
 
-# values estimated for Ranger2
-max_vel_theta: 1.5
-min_vel_theta: 0.06
 max_rot_vel: 1.5
-min_rot_vel: 0.06
+min_rot_vel: 0.4
 
-min_in_place_vel_theta: 0.2
-max_vel_x: 0.3
+max_vel_x: 0.8
 min_vel_x: 0.05
 max_vel_y: 0.3
 min_vel_y: 0.05
-max_trans_vel: 0.3 # for DWA
-min_trans_vel: 0.05 # for DWA
+max_trans_vel: 0.55 # for DWA
+min_trans_vel: 0.1  # for DWA
 
-xy_goal_tolerance: 0.1
+xy_goal_tolerance: 0.10
 yaw_goal_tolerance: 0.06
-# if the robot ever reaches the goal
-# xy location it will simply rotate in place,
-# even if it ends up outside the goal tolerance while it is doing so. (false)
+
+# If the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so. (false)
 latch_xy_goal_tolerance: true
 
 penalize_negative_x: false # for DWA planner only
@@ -31,7 +24,6 @@ penalize_negative_x: false # for DWA planner only
 oscillation_reset_dist: 0.03
 
 # The amount of time to forward-simulate trajectories in seconds
-sim_time: 1.2
+sim_time: 1.7
 holonomic_robot: true
-
 meter_scoring: true
