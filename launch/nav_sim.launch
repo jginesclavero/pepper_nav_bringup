@@ -1,6 +1,6 @@
 <launch>
 
-    <arg name="map_file" default="apartment.yaml" />
+    <arg name="map_file" default="clf.yaml" />
     <arg name="map" default="$(find pepper_plymouth_ros)/maps/$(arg map_file)" />
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
 
@@ -14,7 +14,7 @@
         <remap from="/scan" to="/laser/scan_merged"/>
 
         <param name="footprint_padding" value="0.05" />
-        <param name="controller_frequency" value="10.0" />
+        <param name="controller_frequency" value="9.0" />
         <param name="controller_patience" value="5.0" />
         <param name="planner_patience" value="3.0" />
         <param name="planner_frequency" value="0.5" />
