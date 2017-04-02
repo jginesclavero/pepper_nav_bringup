@@ -9,8 +9,7 @@
 
     <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan_loader" args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet standalone_nodelet">
         <remap from="image" to="/pepper_robot/camera/depth/camera/image_raw"/>
-        <param name="scan_height" value="1"/>
-        <param name="output_frame_id" value="/CameraDepth_frame"/>
+        <param name="output_frame_id" value="/laser_virtual"/>
         <param name="range_min" value="0.3"/>
         <remap from="scan" to="/depth_to_laser/scan"/>
     </node>
