@@ -1,19 +1,14 @@
 <launch>
 
-    <!-- <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan">
-        <param name="scan_height" value="1"/>
-        <remap from="image" to="/pepper_robot/camera/depth/camera/image_raw"/>
-    </node> -->
-
     <node pkg="nodelet" type="nodelet" name="standalone_nodelet"  args="manager"/>
 
-    <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan_loader" args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet standalone_nodelet">
+    <!-- <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan_loader" args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet standalone_nodelet">
         <remap from="image" to="/pepper_robot/camera/depth/camera/image_raw"/>
         <param name="scan_height" value="1"/>
         <param name="output_frame_id" value="/laser_virtual"/>
         <param name="range_min" value="0.3"/>
         <remap from="scan" to="/depth_to_laser/scan"/>
-    </node>
+    </node> -->
 
     <arg name="map_file" default="clf.yaml" />
     <arg name="map" default="$(find pepper_plymouth_ros)/maps/$(arg map_file)" />
