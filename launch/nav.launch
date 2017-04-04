@@ -3,13 +3,11 @@
     <arg name="map" default="$(find pepper_plymouth_ros)/maps/$(arg map_file)" />
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
 
-    <!-- not using any localization -> we assume that the /odom frame is always correct -->
-    <!--<node name="map_odom_transform" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /odom 10"/>-->
-    <node name="amcl" pkg="amcl" type="amcl" output="screen">
-        <remap from="/scan" to="/laser/scan_merged"/>
+    <include file="$(find pepper_plymouth_ros)/launch/amcl.launch">
+        <arg name="topic_scan" value="/laser/scan_merged" />
         <param name="odom_model_type" value="omni" />
         <param name="base_frame_id" value="base_footprint" />
-    </node>
+    </include>
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
         <remap from="/scan" to="/laser/scan_merged"/>
