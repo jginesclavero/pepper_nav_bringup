@@ -2,15 +2,11 @@
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
         <remap from="/scan" to="/laser/scan_merged"/>
-        <!-- Old Approach using DWA -->
-        <!-- <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> -->
         <rosparam file="$(find pepper_plymouth_ros)/nav_conf/move_base_params.yaml" command="load" />
         <rosparam file="$(find pepper_plymouth_ros)/nav_conf/costmap_common_params.yaml" command="load" ns="global_costmap" />
         <rosparam file="$(find pepper_plymouth_ros)/nav_conf/costmap_common_params.yaml" command="load" ns="local_costmap" />
         <rosparam file="$(find pepper_plymouth_ros)/nav_conf/local_costmap_params.yaml" command="load" />
         <rosparam file="$(find pepper_plymouth_ros)/nav_conf/global_costmap_params.yaml" command="load" />
-        <!-- <rosparam file="$(find pepper_plymouth_ros)/nav_conf/local_planner.yaml" command="load" ns="TrajectoryPlannerROS" /> -->
-        <!-- <rosparam file="$(find pepper_plymouth_ros)/nav_conf/local_planner.yaml" command="load" ns="DWAPlannerROS" /> -->
         <rosparam file="$(find pepper_plymouth_ros)/nav_conf/base_local_planner_params.yaml" command="load" />
         <rosparam file="$(find pepper_plymouth_ros)/nav_conf/move_base_params.yaml" command="load" />
     </node>
