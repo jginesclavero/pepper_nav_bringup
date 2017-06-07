@@ -13,5 +13,6 @@
         <param name="maxRange" value="4.0" />
         <param name="maxUrange" value="3.9" />
         <param name="delta" value="0.02" />
+        <param name="base_frame" value="base_footprint" />
     </node>
 </launch>
