@@ -1,7 +1,7 @@
 <launch>
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
         <remap from="/scan" to="/laser/scan_merged"/>
-        <param name="map_update_interval" value="1" />
+        <param name="map_update_interval" value="2" />
         <param name="linearUpdate" value="0.1" />
         <param name="angularUpdate" value="0.1" />
         <param name="temporalUpdate" value="0.5" />
