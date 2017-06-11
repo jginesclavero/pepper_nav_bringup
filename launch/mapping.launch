@@ -12,7 +12,7 @@
         <param name="particles" value="300" />
         <param name="maxRange" value="3.0" />
         <param name="maxUrange" value="2.9" />
-        <param name="delta" value="0.02" />
+        <param name="delta" value="0.05" />
         <param name="base_frame" value="base_footprint" />
     </node>
 </launch>
