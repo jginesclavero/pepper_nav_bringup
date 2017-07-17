@@ -1,6 +1,6 @@
 global_costmap:
-    update_frequency: 2.
-    publish_frequency: 1.
-    plugins:
-        - {name: static_map, type: "costmap_2d::StaticLayer"}
-        - {name: inflation, type: "costmap_2d::InflationLayer"}
+    global_frame: /map
+    observation_sources: laser_scan_sensor
+    static_map: true
+    map_type: costmap
+    resolution: 0.1
