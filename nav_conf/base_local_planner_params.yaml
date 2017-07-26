@@ -50,4 +50,4 @@ TrajectoryPlannerROS:
 
   prune_plan: true                 # true
 
-  clearing_rotation_allowed: true
+  clearing_rotation_allowed: false
