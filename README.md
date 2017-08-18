@@ -1,4 +1,4 @@
-Plymouth's Pepper ROS nodes
+Pepper ROS Navigation nodes
 ===========================
 
 Bringing it up
