@@ -22,6 +22,7 @@
         <param name="laser_z_short" value="0.05"/>
         <param name="laser_z_max" value="0.05"/>
         <param name="laser_z_rand" value="0.5"/>
+        <!-- use reported max laser range -->
         <param name="laser_max_range" value="-1.0"/>
         <param name="laser_min_range" value="-1.0"/>
         <param name="laser_sigma_hit" value="0.2"/>
