@@ -1,4 +1,4 @@
-controller_frequency: 10.0 # 8.0 control the base in hz
+controller_frequency: 8.0 # 8.0 control the base in hz
 controller_patience: 1.5   # 5.0 wait seconds for control
 planner_patience: 0.8      # 5.0 wait seconds for plan
 planner_frequency: 0.5     # 0.0 only plan on problems
