@@ -80,13 +80,13 @@ Navigation
 Both localisation (using `AMCL`) and planning are provided from:
 
 ```
-roslaunch pepper_plymouth_ros nav.launch
+roslaunch pepper_nav_bringup nav.launch
 ```
 
 A custom map can be provided:
 
 ```
-roslaunch pepper_plymouth_ros nav.launch map:=<full path to your map.yaml>
+roslaunch pepper_nav_bringup nav.launch map:=<full path to your map.yaml>
 ```
 
 3D Perception
@@ -114,6 +114,6 @@ $ sudo apt install ros-kinetic-octo*
 - then install by hand [octomap_mapping](https://github.com/OctoMap/octomap_mapping)
 - then:
 ```
-$ roslaunch pepper_plymouth_ros octomap_mapping.launch
+$ roslaunch pepper_nav_bringup octomap_mapping.launch
 ```
 
