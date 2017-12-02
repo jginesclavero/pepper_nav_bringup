@@ -1,4 +1,10 @@
 <launch>
+    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter">
+        <remap from="scan_filtered" to="laser/scan_max"/>
+        <remap from="scan" to="laser/scan_merged"/>
+        <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
+        <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
+    </node>
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
         <remap from="/scan" to="/laser/scan_merged"/>
