@@ -2,7 +2,6 @@ max_obstacle_range: 2.0
 raytrace_range: 4.0
 robot_base_frame: base_footprint
 robot_radius: 0.30
-inflation_radius: 0.40
 update_frequency: 5.0
 publish_frequency: 5.0
 cost_scaling_factor: 3.0
