@@ -6,4 +6,4 @@ local_costmap:
     height: 2.5
     resolution: 0.1
     map_type: costmap
-    inflation_radius: 0.30
+    inflation_radius: 0.20
