@@ -1,4 +1,4 @@
-image: appartment_elevator_2.pgm
+image: appartment_elevator.pgm
 resolution: 0.050000
 origin: [-15.200000, -31.200000, 0.000000]
 negate: 0
