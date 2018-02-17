@@ -1,10 +1,25 @@
-max_obstacle_range: 2.0
-raytrace_range: 3.0
+plugins: 
+    - {name: static_map, type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer,    type: "costmap_2d::VoxelLayer"}
+    - {name: inflation_layer,   type: "costmap_2d::VoxelLayer"}
+    - {name: sonar_layer,       type: "range_sensor_layer::RangeSensorLayer"}
+
 robot_base_frame: base_footprint
-robot_radius: 0.30
-update_frequency: 5.0 # Default: 5.0 The frequency in Hz for the map to be updated.
-publish_frequency: 5.0 # Default: 5.0 The frequency in Hz for the map to be publish display information.
-cost_scaling_factor: 3.0 # Default: 10 A scaling factor to apply to cost values during inflation. The cost function is computed as follows for all cells in the costmap further than the inscribed radius distance and closer than the inflation radius distance away from an actual
-observation_sources: laser_scan_sensor laser_scan_sensor_clear_cost_map
-laser_scan_sensor: {sensor_frame: /laser_virtual, data_type: LaserScan, topic: /laser/scan_merged, marking: true, clearing: false}
-laser_scan_sensor_clear_cost_map: {sensor_frame: /laser_virtual, data_type: LaserScan, topic: /laser/scan_max, marking: false, clearing: true}
+publish_frequency: 1.0
+update_frequency: 5.0
+publish_frequency: 5.0
+
+obstacle_layer:
+    observation_sources: laser_scan_sensor laser_scan_sensor_clear_cost_map
+    laser_scan_sensor: {sensor_frame: /laser_virtual, data_type: LaserScan, topic: /laser/scan_merged, marking: true, clearing: false}
+    laser_scan_sensor_clear_cost_map: {sensor_frame: /laser_virtual, data_type: LaserScan, topic: /laser/scan_max, marking: false, clearing: true}
+    max_obstacle_range: 2.0
+    raytrace_range: 3.0
+
+inflation_layer:
+    cost_scaling_factor: 3.0
+
+sonar_layer:
+    topics: ["/pepper_robot/sonar/front"]
+    no_readings_timeout: 1.0
+    clear_on_max_reading: true
