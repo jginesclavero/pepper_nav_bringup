@@ -6,16 +6,16 @@ TrajectoryPlannerROS:
   acc_lim_theta: 0.5                # 0.6 Pepper
 
 # Set the velocity limits of the robot
-  max_vel_x: 0.5                    # 0.6 Pepper
-  max_vel_y: 0.2                    # 0.7 Pepper
+  max_vel_x: 0.4                    # 0.6 Pepper
+  max_vel_y: 0.15                    # 0.7 Pepper
   min_vel_x: 0.0                    # 0.1 ""
-  min_vel_y: -0.2                   # 0.1 ""
+  min_vel_y: -0.15                   # 0.1 ""
   max_vel_theta: 0.3                # 0.2 ""
   min_vel_theta: -0.3               # -0.1 ""
   min_in_place_vel_theta: 0.3       # 0.15 ""
 
 # Notice that this velocity is set to be negative. A bit confusing admittedly.
-  escape_vel: -0.25                 # -0.1
+  escape_vel: -0.1                 # -0.1
 
 # p2os is no holonomic robot.
   holonomic_robot: true             # true

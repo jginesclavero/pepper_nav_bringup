@@ -20,7 +20,7 @@ obstacle_layer:
 inflation_layer:
     cost_scaling_factor: 3.0
 
-sonar_layer:
-    topics: ["/pepper_robot/sonar/front"]
-    no_readings_timeout: 1.0
-    clear_on_max_reading: true
+#sonar_layer:
+#    topics: ["/pepper_robot/sonar/front"]
+#    no_readings_timeout: 1.0
+#    clear_on_max_reading: true
