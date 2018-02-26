@@ -15,7 +15,7 @@ TrajectoryPlannerROS:
   min_in_place_vel_theta: 0.3       # 0.15 ""
 
 # Notice that this velocity is set to be negative. A bit confusing admittedly.
-  escape_vel: -0.25                 # -0.1
+  escape_vel: -0.05                 # -0.1
 
 # p2os is no holonomic robot.
   holonomic_robot: true             # true
