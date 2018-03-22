@@ -1,19 +1,19 @@
 <launch>
-    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter">
+    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter_front">
         <remap from="scan_filtered" to="laser/srd_front/scan_max"/>
         <remap from="scan" to="laser/srd_front/scan"/>
         <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
         <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
     </node>
     
-    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter">
+    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter_right">
         <remap from="scan_filtered" to="laser/srd_right/scan_max"/>
         <remap from="scan" to="laser/srd_right/scan"/>
         <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
         <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
     </node>
     
-    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter">
+    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter_left">
         <remap from="scan_filtered" to="laser/srd_left/scan_max"/>
         <remap from="scan" to="laser/srd_left/scan"/>
         <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
