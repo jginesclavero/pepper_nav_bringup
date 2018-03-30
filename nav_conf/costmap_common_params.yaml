@@ -5,6 +5,7 @@ robot_radius: 0.30
 update_frequency: 5.0 # Default: 5.0 The frequency in Hz for the map to be updated.
 publish_frequency: 5.0 # Default: 5.0 The frequency in Hz for the map to be publish display information.
 cost_scaling_factor: 3.0 # Default: 10 A scaling factor to apply to cost values during inflation. The cost function is computed as follows for all cells in the costmap further than the inscribed radius distance and closer than the inflation radius distance away from an actual
+inflate_unknown: true
 observation_sources: laser_scan_sensor laser_scan_clear_front laser_scan_clear_right laser_scan_clear_left
 laser_scan_sensor: {sensor_frame: /laser_virtual, data_type: LaserScan, topic: /laser/scan_merged, marking: true, clearing: false}
 laser_scan_clear_front: {sensor_frame: /SurroundingFrontLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_front/scan_max, marking: false, clearing: true}

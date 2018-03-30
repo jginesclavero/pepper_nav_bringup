@@ -40,5 +40,6 @@
         <param name="recovery_alpha_fast" value="0.0"/>
         <param name="odom_model_type" value="omni" />
         <param name="base_frame_id" value="base_footprint" />
+        <param name="first_map_only" value="true" />
     </node>
 </launch>
