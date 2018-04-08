@@ -5,10 +5,12 @@ robot_radius: 0.30
 update_frequency: 5.0 # Default: 5.0 The frequency in Hz for the map to be updated.
 publish_frequency: 5.0 # Default: 5.0 The frequency in Hz for the map to be publish display information.
 cost_scaling_factor: 3.0 # Default: 10 A scaling factor to apply to cost values during inflation. The cost function is computed as follows for all cells in the costmap further than the inscribed radius distance and closer than the inflation radius distance away from an actual
-observation_sources: laser_scan_sensor laser_scan_clear_front laser_scan_clear_right laser_scan_clear_left point_cloud_sensor0 point_cloud_sensor1
-laser_scan_sensor: {sensor_frame: /laser_virtual, data_type: LaserScan, topic: /laser/scan_merged, marking: true, clearing: false}
+observation_sources: laser_scan_mark_front laser_scan_mark_right laser_scan_mark_left laser_scan_clear_front laser_scan_clear_right laser_scan_clear_left point_cloud_sensor0 point_cloud_sensor1
+laser_scan_mark_front:  {sensor_frame: /SurroundingFrontLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_front/scan, marking: true, clearing: false}
+laser_scan_mark_right:  {sensor_frame: /SurroundingRightLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_right/scan, marking: true, clearing: false}
+laser_scan_mark_left:   {sensor_frame: /SurroundingLeftLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_left/scan, marking: true, clearing: false}
 laser_scan_clear_front: {sensor_frame: /SurroundingFrontLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_front/scan_max, marking: false, clearing: true}
 laser_scan_clear_right: {sensor_frame: /SurroundingRightLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_right/scan_max, marking: false, clearing: true}
-laser_scan_clear_left: {sensor_frame: /SurroundingLeftLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_left/scan_max, marking: false, clearing: true}
+laser_scan_clear_left:  {sensor_frame: /SurroundingLeftLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_left/scan_max, marking: false, clearing: true}
 point_cloud_sensor0: {sensor_frame: CameraDepth_optical_frame, data_type: PointCloud2, topic: /voxel_grid/output, marking: true, clearing: false, min_obstacle_height: 0.20, max_obstacle_height: 1.2}
 point_cloud_sensor1: {sensor_frame: CameraDepth_optical_frame, data_type: PointCloud2, topic: /voxel_grid/output, marking: false, clearing: true, min_obstacle_height: -1.0}
