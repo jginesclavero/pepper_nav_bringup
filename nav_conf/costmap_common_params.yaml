@@ -12,5 +12,5 @@ laser_scan_mark_left:   {sensor_frame: /SurroundingLeftLaser_frame_corr, data_ty
 laser_scan_clear_front: {sensor_frame: /SurroundingFrontLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_front/scan_max, marking: false, clearing: true}
 laser_scan_clear_right: {sensor_frame: /SurroundingRightLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_right/scan_max, marking: false, clearing: true}
 laser_scan_clear_left:  {sensor_frame: /SurroundingLeftLaser_frame_corr, data_type: LaserScan, topic: /laser/srd_left/scan_max, marking: false, clearing: true}
-point_cloud_sensor0: {sensor_frame: CameraDepth_optical_frame, data_type: PointCloud2, topic: /voxel_grid/output, marking: true, clearing: false, min_obstacle_height: 0.20, max_obstacle_height: 0.9}
+point_cloud_sensor0: {sensor_frame: CameraDepth_optical_frame, data_type: PointCloud2, topic: /voxel_grid/output, marking: true, clearing: false, min_obstacle_height: 0.30, max_obstacle_height: 0.9}
 point_cloud_sensor1: {sensor_frame: CameraDepth_optical_frame, data_type: PointCloud2, topic: /voxel_grid/output, marking: false, clearing: true, min_obstacle_height: -1.0}
