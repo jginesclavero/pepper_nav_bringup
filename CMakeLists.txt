@@ -20,5 +20,6 @@ install(DIRECTORY launch/
 # Instructions to install configuration files
 install(DIRECTORY nav_conf/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/nav_conf )
-install(DIRECTORY maps/
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/maps )
+# Do not install maps, they are saved somewhere else
+# install(DIRECTORY maps/
+#    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/maps )
