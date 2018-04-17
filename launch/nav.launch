@@ -12,7 +12,7 @@
     </node>
 
     <arg name="map_file" default="clf.yaml" />
-    <arg name="map" default="$(find pepper_nav_bringup)/maps/$(arg map_file)" />
+    <arg name="map" default="$(arg map_file)" />
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
 
     <include file="$(find pepper_nav_bringup)/launch/amcl.launch">
