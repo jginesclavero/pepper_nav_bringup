@@ -1,4 +1,4 @@
-controller_frequency: 8.0   # 8.0 control the base in hz
+controller_frequency: 5.0   # Default 8.0 control the base in hz, 5 Hz reduces CPU load by 25%
 controller_patience: 2.0    # Default: 15.0 How long the controller will wait in seconds without receiving a valid control before space-clearing operations are performed.
 planner_patience: 1.0       # Default: 5.0 How long the planner will wait in seconds in an attempt to find a valid plan before space-clearing operations are performed.
 max_planning_retries: 3
