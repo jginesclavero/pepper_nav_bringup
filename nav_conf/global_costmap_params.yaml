@@ -3,4 +3,4 @@ global_costmap:
     static_map: true
     map_type: costmap
     resolution: 0.1
-    inflation_radius: 0.33 # Default: 0.55 The radius in meters to which the map inflates obstacle cost values.
+    inflation_radius: 0.50 # Default: 0.55 The radius in meters to which the map inflates obstacle cost values.
