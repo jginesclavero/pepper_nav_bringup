@@ -1,0 +1,29 @@
+<launch>
+
+ <!--<node pkg="erl" type="scan_filter_node" name="scan_filter_node"></node>-->
+
+ <arg name="custom_param_file" default="$(find pepper_navigation)/param/dummy.yaml"/>
+  <!-- Map server -->
+  <arg name="map_file" default="$(find acciona)/maps/casa_labo_2D/static_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+  <arg name="use_map_topic"  default="true"/>
+  <arg name="scan_topic"      default="pepper_robot/laser_corrected"/>
+  <include file="$(find pepper_navigation)/launch/includes/amcl.launch.xml">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+    <arg name="use_map_topic"  value="$(arg use_map_topic)"/>
+    <arg name="scan_topic"      value="$(arg scan_topic)"/>
+  </include>
+
+
+
+  <include file="$(find pepper_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+</launch>

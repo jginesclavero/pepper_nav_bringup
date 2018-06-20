@@ -1,0 +1,13 @@
+<launch>
+ 	<arg name="custom_param_file" default="$(find turtlebot_navigation)/param/dummy.yaml"/>
+	<include file="$(find pepper_navigation)/launch/includes/move_base.launch.xml">
+		<arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  	</include>
+
+  	<node name="load_semantic_map_node"  pkg="pepper_navigation" type="load_semantic_map_node">
+  		<rosparam file="$(find pepper_navigation)/config/load_semantic_map.yaml" command="load"/>
+  	</node>
+  	<node name="find_and_go_node"  pkg="pepper_navigation" type="find_and_go_node" output="screen">
+    	<rosparam file="$(find pepper_navigation)/config/semantic_navigation.yaml" command="load"/>
+  	</node>
+</launch>

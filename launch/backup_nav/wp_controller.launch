@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="wp_controller_node" pkg="pepper_navigation" type="wp_controller_node" output="screen" >
+      <rosparam file="$(find pepper_navigation)/param/waypoint_list.yaml" command="load"/>
+  </node>
+
+</launch>

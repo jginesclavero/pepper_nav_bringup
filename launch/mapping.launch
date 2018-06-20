@@ -1,4 +1,36 @@
 <launch>
+    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter_front">
+        <remap from="scan_filtered" to="laser/srd_front/scan_max"/>
+        <remap from="scan" to="laser/srd_front/scan"/>
+        <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
+        <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
+    </node>
+    
+    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter_right">
+        <remap from="scan_filtered" to="laser/srd_right/scan_max"/>
+        <remap from="scan" to="laser/srd_right/scan"/>
+        <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
+        <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
+    </node>
+    
+    <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter_left">
+        <remap from="scan_filtered" to="laser/srd_left/scan_max"/>
+        <remap from="scan" to="laser/srd_left/scan"/>
+        <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
+        <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
+    </node>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+        <remap from="/scan" to="/laser/scan_merged"/>
+        <rosparam file="$(find pepper_nav_bringup)/nav_conf/move_base_params.yaml" command="load" />
+        <rosparam file="$(find pepper_nav_bringup)/nav_conf/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find pepper_nav_bringup)/nav_conf/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find pepper_nav_bringup)/nav_conf/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find pepper_nav_bringup)/nav_conf/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find pepper_nav_bringup)/nav_conf/base_local_planner_params.yaml" command="load" />
+        <rosparam file="$(find pepper_nav_bringup)/nav_conf/move_base_params.yaml" command="load" />
+    </node>
+   
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
         <remap from="/scan" to="/laser/scan_merged"/>
         <param name="map_update_interval" value="1" />
@@ -14,5 +46,6 @@
         <param name="maxUrange" value="2.9" />
         <param name="delta" value="0.05" />
         <param name="base_frame" value="base_footprint" />
+	<param name="occ_thresh" value="0.60"/>
     </node>
 </launch>
