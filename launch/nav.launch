@@ -19,7 +19,7 @@
         <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
         <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
     </node> -->
-
+    
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
         <remap from="/scan" to="/pepper_robot/laser_corrected"/>
         <rosparam file="$(find pepper_nav_bringup)/nav_conf/move_base_params.yaml" command="load" />

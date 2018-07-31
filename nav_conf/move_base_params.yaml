@@ -9,12 +9,14 @@ recovery_behaviors:
   - {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}
   - {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}
 
+layer_names: ["obstacle_layer","laser_scan_sensor","laser_scan_clear","point_cloud_sensor0","point_cloud_sensor1"]
+
 conservative_reset:
-  layer_names: ["obstacle_layer"]
-  reset_distance: 2.0
+  layer_names: "obstacle_layer"
+  reset_distance: 0.0
 
 aggressive_reset:
-  layer_names: ["obstacle_layer"]
+  layer_names: "obstacle_layer"
   reset_distance: 0.0
 
 
