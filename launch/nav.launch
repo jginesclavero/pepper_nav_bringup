@@ -11,17 +11,17 @@
         <remap from="scan" to="laser/srd_right/scan"/>
         <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
         <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
-    </node>
+    </node> -->
 
     <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter_left">
-        <remap from="scan_filtered" to="laser/srd_left/scan_max"/>
-        <remap from="scan" to="laser/srd_left/scan"/>
+        <remap from="scan_filtered" to="/pepper_robot/laser_corrected_max"/>
+        <remap from="scan" to="/pepper_robot/laser_corrected"/>
         <rosparam command="load" file="$(find pepper_nav_bringup)/nav_conf/max_laser_config_ownfilter.yaml" />
         <param name="tf_message_filter_target_frame" type="string" value="laser_virtual" />
-    </node> -->
-    
+    </node>
+
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
-        <remap from="/scan" to="/pepper_robot/laser_corrected"/>
+        <remap from="/scan" to="/pepper_robot/laser_corrected_max"/>
         <rosparam file="$(find pepper_nav_bringup)/nav_conf/move_base_params.yaml" command="load" />
         <rosparam file="$(find pepper_nav_bringup)/nav_conf/costmap_common_params.yaml" command="load" ns="global_costmap" />
         <rosparam file="$(find pepper_nav_bringup)/nav_conf/costmap_common_params.yaml" command="load" ns="local_costmap" />

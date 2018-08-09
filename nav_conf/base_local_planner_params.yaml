@@ -37,7 +37,7 @@ TrajectoryPlannerROS:
 
 # ---- Parameters for scoring trajectories
   meter_scoring: true               # false -- distance in meter or cells
-  pdist_scale: 2.0                  #
+  pdist_scale: 1.6                  # 2.0 (tobi)
   gdist_scale: 0.85                 #
   occdist_scale: 0.02               # 0.01 -- weighting how much controller should avoid obstacles
   heading_lookahead: 0.325          # 0.325

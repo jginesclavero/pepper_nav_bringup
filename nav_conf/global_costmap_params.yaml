@@ -3,8 +3,7 @@ global_costmap:
     static_map: true
     map_type: costmap
     resolution: 0.1
-    inflation_radius: 0.50 # Default: 0.55 The radius in meters to which the map inflates obstacle cost values.
     plugins:
-      - {name: clearing_layer,          type: "costmap_2d::ObstacleLayer"}
-      - {name: static_layer,            type: "costmap_2d::StaticLayer"}
-      - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+    - {name: clearing_layer,          type: "costmap_2d::ObstacleLayer"}
+    - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+    - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
